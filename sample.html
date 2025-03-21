@@ -1,0 +1,29 @@
+<!<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play GIF on Click</title>
+    <style>
+        #gifContainer {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="playGif()">Don't Click</button>
+    <div id="gifContainer">
+        <img id="gif" src="https://drive.google.com/file/d/1_Wa_HzxVDCfiT1dRlTTPklgFdtKTgGHU/view?usp=sharing" alt="Playing GIF" width="300">
+    </div>
+
+    <script>
+        function playGif() {
+            const gif = document.getElementById("gif");
+            gif.src = "pop.gif" + "?t=" + new Date().getTime(); // Force refresh to replay GIF
+            document.getElementById("gifContainer").style.display = "block";
+        }
+    </script>
+</body>
+</html>
+
